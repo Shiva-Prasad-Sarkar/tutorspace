@@ -126,7 +126,7 @@ export function DmWindow({ classId, currentUser, otherUser, initialMessages }: D
   const isTeacher = currentUser.role === 'teacher'
 
   return (
-    <div className="flex flex-col h-[calc(100dvh-16rem)] lg:h-[calc(100vh-8rem)]">
+    <div className="flex flex-col h-[calc(100dvh-17rem)] lg:h-[calc(100vh-8rem)]">
       {/* Header */}
       <div className="flex items-center gap-3 mb-3">
         <Link

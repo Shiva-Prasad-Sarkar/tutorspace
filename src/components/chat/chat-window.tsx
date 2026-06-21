@@ -97,7 +97,7 @@ export function ChatWindow({ classId, currentUser, initialMessages }: ChatWindow
   const groups = groupMessages()
 
   return (
-    <div className="flex flex-col h-[calc(100dvh-16rem)] lg:h-[calc(100vh-8rem)]">
+    <div className="flex flex-col h-[calc(100dvh-17rem)] lg:h-[calc(100vh-8rem)]">
       <div className="mb-3 hidden lg:block">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">Class Chat</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400">Group chat — visible to all class members</p>
