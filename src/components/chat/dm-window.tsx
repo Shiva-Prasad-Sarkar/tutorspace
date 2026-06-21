@@ -126,9 +126,9 @@ export function DmWindow({ classId, currentUser, otherUser, initialMessages }: D
   const isTeacher = currentUser.role === 'teacher'
 
   return (
-    <div className="flex flex-col h-[calc(100vh-14rem)] lg:h-[calc(100vh-8rem)]">
+    <div className="flex flex-col h-[calc(100dvh-16rem)] lg:h-[calc(100vh-8rem)]">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-3 mb-3">
         <Link
           href={isTeacher ? `/classes/${classId}/messages` : `/classes/${classId}`}
           className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
@@ -145,7 +145,7 @@ export function DmWindow({ classId, currentUser, otherUser, initialMessages }: D
       </div>
 
       {/* Messages area */}
-      <div className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-white/8 p-4 space-y-1">
+      <div className="flex-1 min-h-0 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-white/8 p-4 space-y-1">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="text-5xl mb-3">✉️</div>

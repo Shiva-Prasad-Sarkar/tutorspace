@@ -97,14 +97,14 @@ export function ChatWindow({ classId, currentUser, initialMessages }: ChatWindow
   const groups = groupMessages()
 
   return (
-    <div className="flex flex-col h-[calc(100vh-14rem)] lg:h-[calc(100vh-8rem)]">
-      <div className="mb-4">
+    <div className="flex flex-col h-[calc(100dvh-16rem)] lg:h-[calc(100vh-8rem)]">
+      <div className="mb-3 hidden lg:block">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">Class Chat</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400">Group chat — visible to all class members</p>
       </div>
 
       {/* Messages area */}
-      <div className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-700 p-4 space-y-1">
+      <div className="flex-1 min-h-0 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-white/8 p-4 space-y-1">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="text-5xl mb-3">💬</div>

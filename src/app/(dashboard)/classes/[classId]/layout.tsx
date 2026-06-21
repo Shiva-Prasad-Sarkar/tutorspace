@@ -60,10 +60,10 @@ export default async function ClassLayout({
 
   return (
     <div>
-      <div className="sticky top-14 lg:top-0 z-20 bg-background -mx-4 sm:-mx-5 md:-mx-7 px-4 sm:px-5 md:px-7 pt-4 pb-0">
+      <div className="sticky top-14 lg:top-0 z-20 bg-background -mx-4 sm:-mx-5 md:-mx-7 px-4 sm:px-5 md:px-7 pt-1 pb-0 -mt-4 sm:-mt-5 md:-mt-6">
         <ClassNav cls={cls as Class} isTeacher={isTeacher} classId={classId} unreadMessages={unreadMessages} />
       </div>
-      <div className="mt-6">{children}</div>
+      <div className="mt-4">{children}</div>
     </div>
   )
 }

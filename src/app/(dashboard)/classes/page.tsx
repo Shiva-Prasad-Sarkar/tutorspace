@@ -115,28 +115,25 @@ export default async function ClassesPage() {
                   </div>
 
                   {/* Footer */}
-                  <div className="mt-auto pt-3 border-t border-gray-100 dark:border-white/6 flex items-center justify-between">
-                    {!isTeacher && (
+                  <div className="mt-auto pt-3 border-t border-gray-100 dark:border-white/6 flex items-center gap-2">
+                    {isTeacher ? (
+                      <div className="flex items-center gap-0.5">
+                        <CopyInviteButton code={cls.invite_code} iconOnly />
+                        <EditClassDialog cls={cls} />
+                        <DeleteClassButton classId={cls.id} className={cls.name} />
+                      </div>
+                    ) : (
                       <Badge className="text-xs border-0 bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400">
                         Enrolled
                       </Badge>
                     )}
-                    <div className="flex items-center gap-0.5 ml-auto">
-                      {isTeacher && (
-                        <>
-                          <CopyInviteButton code={cls.invite_code} iconOnly />
-                          <EditClassDialog cls={cls} />
-                          <DeleteClassButton classId={cls.id} className={cls.name} />
-                        </>
-                      )}
-                      <Link
-                        href={`/classes/${cls.id}`}
-                        className="flex items-center gap-1.5 ml-1 px-3 py-1.5 rounded-xl text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 transition-all group/btn"
-                      >
-                        Open
-                        <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </div>
+                    <Link
+                      href={`/classes/${cls.id}`}
+                      className="ml-auto flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 active:scale-95 shadow-sm shadow-indigo-500/25 transition-all group/btn"
+                    >
+                      Open
+                      <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               </div>

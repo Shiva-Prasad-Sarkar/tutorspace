@@ -81,9 +81,9 @@ export default async function DashboardPage() {
   ]
 
   return (
-    <div className="space-y-8 animate-fade-up">
+    <div className="space-y-5 sm:space-y-7 animate-fade-up">
       {/* ── Hero banner ──────────────────────────────────────── */}
-      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 p-6 sm:p-8">
+      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 p-5 sm:p-8">
         {/* Decorative circles */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         <div className="absolute bottom-0 left-20 w-40 h-40 bg-white/5 rounded-full translate-y-1/2 pointer-events-none" />
@@ -165,7 +165,7 @@ export default async function DashboardPage() {
           ) : (
             <div className="space-y-3 stagger">
               {classes.slice(0, 4).map(cls => (
-                <Link key={cls.id} href={`/classes/${cls.id}`}>
+                <Link key={cls.id} href={`/classes/${cls.id}`} className="block">
                   <Card className="border-0 shadow-sm dark:bg-card/80 card-hover cursor-pointer group">
                     <CardContent className="p-4 flex items-center gap-4">
                       <div
@@ -207,7 +207,7 @@ export default async function DashboardPage() {
                 {upcomingHw.slice(0, 5).map(hw => {
                   const isOverdue = hw.due_date && !isAfter(parseISO(hw.due_date), new Date()) && !hw.submitted
                   return (
-                    <Link key={hw.id} href={`/classes/${hw.class_id}/homework`}>
+                    <Link key={hw.id} href={`/classes/${hw.class_id}/homework`} className="block">
                       <Card className="border-0 shadow-sm dark:bg-card/80 card-hover cursor-pointer animate-fade-up">
                         <CardContent className="py-3 px-4 flex items-center gap-3">
                           <div className={cn('p-2 rounded-xl flex-shrink-0', hw.submitted ? 'bg-emerald-100 dark:bg-emerald-950/50' : 'bg-orange-100 dark:bg-orange-950/50')}>
